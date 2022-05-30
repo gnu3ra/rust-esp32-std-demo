@@ -768,9 +768,7 @@ fn ttgo_hello_world(
 ) -> Result<()> {
     info!("About to initialize the TTGO ST7789 LED driver");
 
-    let config = <spi::config::Config as Default>::default()
-        .write_only(true)
-        .baudrate(80.MHz().into());
+    let config = <spi::config::Config as Default>::default().baudrate(80.MHz().into());
 
     let mut backlight = backlight.into_output()?;
     backlight.set_high()?;
